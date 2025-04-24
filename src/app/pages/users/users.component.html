@@ -1,0 +1,22 @@
+<section class="container mt-5">
+  <h1>Lista de Usuarios</h1>
+  <div class="d-flex flex-wrap gap-5 justify-content-center">
+    <div *ngFor="let user of users" class="card" style="width: 18rem;">
+      <img [src]="user.picture.large" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{user.name.title}} {{user.name.first}} {{user.name.last}}</h5>
+        <p class="card-text">Género: {{user.gender}}</p>
+        <p class="card-text">Ubicación: {{user.location.city}}, {{user.location.country}}</p>
+        <p class="card-text">Correo electrónico: {{user.email}}</p>
+        <p class="card-text">Fecha de nacimiento: {{user.registered.date}}</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div *ngIf="isLoading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
